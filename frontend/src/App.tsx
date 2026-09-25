@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { AuthProvider, useAuth } from '@/saas/AuthContext';
-import { GuestOnlyRoute, ProtectedRoute, homeForRole } from '@/saas/ProtectedRoute';
+import { AuthProvider } from '@/saas/AuthContext';
+import { GuestOnlyRoute, ProtectedRoute } from '@/saas/ProtectedRoute';
+import { LandingPage } from '@/saas/pages/LandingPage';
 import { LoginPage } from '@/saas/pages/LoginPage';
 import { SignupPage } from '@/saas/pages/SignupPage';
 import { AdminLayout, SuperAdminLayout } from '@/saas/layouts/PanelLayout';
@@ -15,15 +16,11 @@ import { AccountPage } from '@/saas/pages/AccountPage';
 import { TeamMembersPage } from '@/saas/pages/TeamMembersPage';
 import OrderApp from './OrderApp';
 
-function RootRedirect() {
-  const { isAuthenticated, user } = useAuth();
-  if (!isAuthenticated || !user) return <Navigate to="/login" replace />;
-  return <Navigate to={homeForRole(user.role)} replace />;
-}
-
 function AppRoutes() {
   return (
     <Routes>
+      <Route path="/" element={<LandingPage />} />
+
       <Route element={<GuestOnlyRoute />}>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
@@ -78,8 +75,7 @@ function AppRoutes() {
         />
       </Route>
 
-      <Route path="/" element={<RootRedirect />} />
-      <Route path="*" element={<RootRedirect />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Segoe UI", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Trebuchet MS", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Source Sans 3", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   --color-brand: #059669;
   --color-brand-dark: #047857;
 }
@@ -157,4 +157,56 @@
   50% {
     transform: translateY(-18px);
   }
+}
+
+/* Landing page */
+.landing-page {
+  background:
+    radial-gradient(900px 420px at 12% -8%, rgba(16, 185, 129, 0.14), transparent 55%),
+    radial-gradient(700px 380px at 92% 8%, rgba(14, 165, 233, 0.1), transparent 50%),
+    linear-gradient(180deg, #f7fbf9 0%, #f8fafc 38%, #ffffff 100%);
+}
+
+.landing-hero {
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(16, 185, 129, 0.16), transparent 70%),
+    linear-gradient(180deg, #ecfdf5 0%, #f8fafc 55%, transparent 100%);
+}
+
+.landing-hero-glow {
+  position: absolute;
+  inset: 8% 10% auto;
+  height: 220px;
+  background: radial-gradient(closest-side, rgba(52, 211, 153, 0.35), transparent 70%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.landing-hero-stage {
+  margin-top: 0.5rem;
+}
+
+.landing-hero-mesh {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, transparent, #000 18%, #000 78%, transparent);
+}
+
+.landing-product-shell {
+  border-radius: 1.35rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #0f172a;
+  box-shadow:
+    0 40px 80px -40px rgba(15, 23, 42, 0.55),
+    0 12px 32px -16px rgba(5, 150, 105, 0.35);
+}
+
+.landing-cta-band {
+  background:
+    radial-gradient(600px 280px at 15% 20%, rgba(52, 211, 153, 0.35), transparent 55%),
+    radial-gradient(500px 240px at 90% 80%, rgba(56, 189, 248, 0.22), transparent 50%),
+    linear-gradient(135deg, #047857 0%, #0f766e 48%, #0e7490 100%);
+  box-shadow: 0 28px 60px -30px rgba(4, 120, 87, 0.55);
 }
