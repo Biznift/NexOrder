@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useAuth } from '@/saas/AuthContext';
 import { ROLE_LABELS } from '@/saas/types';
+import { DevelopedByBiznift } from '@/saas/components/DevelopedByBiznift';
 
 type NavItem = { to: string; label: string; icon: ComponentType<{ className?: string }>; end?: boolean };
 
@@ -81,6 +82,7 @@ export function PanelLayout({
               <LogOut className="h-4 w-4" />
               Sign out
             </Button>
+            <DevelopedByBiznift className="mt-3" align="left" />
           </div>
         </aside>
 

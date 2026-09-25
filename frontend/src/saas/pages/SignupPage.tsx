@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/saas/AuthContext';
 import { homeForRole } from '@/saas/ProtectedRoute';
+import { DevelopedByBiznift } from '@/saas/components/DevelopedByBiznift';
 
 export function SignupPage() {
   const { signup } = useAuth();
@@ -102,6 +103,8 @@ export function SignupPage() {
               Sign in
             </Link>
           </p>
+
+          <DevelopedByBiznift className="mt-5" />
         </div>
       </div>
     </div>

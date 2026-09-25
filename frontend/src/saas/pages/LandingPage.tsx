@@ -22,6 +22,7 @@ import { formatCurrency } from '@/lib/utils';
 import { SEED_PLANS } from '@/saas/seed';
 import { HeroProductDemo } from '@/saas/components/landing/HeroProductDemo';
 import { FeatureVisualDemos } from '@/saas/components/landing/FeatureVisualDemos';
+import { DevelopedByBiznift } from '@/saas/components/DevelopedByBiznift';
 
 const NAV = [
   { href: '#features', label: 'Features' },
@@ -547,6 +548,7 @@ export function LandingPage() {
                       <Link to="/login">Try demo login</Link>
                     </Button>
                   </div>
+                  <DevelopedByBiznift className="mt-6 text-emerald-50/80 [&_a]:text-white [&_a]:hover:text-emerald-100" />
                 </div>
               </div>
             </FadeIn>
@@ -570,6 +572,12 @@ export function LandingPage() {
             <Link to="/signup" className="text-slate-600 hover:text-emerald-700">
               Sign up
             </Link>
+          </div>
+        </div>
+        <div className="border-t border-slate-100">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-4 sm:flex-row sm:px-6">
+            <DevelopedByBiznift align="left" />
+            <p className="text-xs text-slate-400">© {new Date().getFullYear()} NexOrder</p>
           </div>
         </div>
       </footer>

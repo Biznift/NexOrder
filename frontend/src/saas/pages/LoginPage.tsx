@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { useAuth } from '@/saas/AuthContext';
 import { homeForRole } from '@/saas/ProtectedRoute';
 import { getCurrentUser } from '@/saas/store';
+import { DevelopedByBiznift } from '@/saas/components/DevelopedByBiznift';
 
 const DEMO_ACCOUNTS = [
   { email: 'super@admin.com', label: 'Super Admin' },
@@ -151,6 +152,8 @@ export function LoginPage() {
                 Create a Free account
               </Link>
             </p>
+
+            <DevelopedByBiznift className="mt-5" />
           </div>
         </div>
       </div>
