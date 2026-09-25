@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Trebuchet MS", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #059669;
+  --color-brand-dark: #047857;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: #0f172a;
+    background: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Uiverse-inspired auth atmosphere */
+.saas-auth-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(16, 185, 129, 0.28), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(14, 165, 233, 0.22), transparent 50%),
+    radial-gradient(700px 400px at 50% 110%, rgba(245, 158, 11, 0.16), transparent 45%),
+    linear-gradient(160deg, #ecfdf5 0%, #f0f9ff 42%, #fff7ed 100%);
+}
+
+.saas-auth-shell::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  transform: rotate(-4deg);
+  pointer-events: none;
+  animation: saas-grid-drift 28s linear infinite;
+}
+
+@keyframes saas-grid-drift {
+  from {
+    transform: rotate(-4deg) translate3d(0, 0, 0);
+  }
+  to {
+    transform: rotate(-4deg) translate3d(-42px, -42px, 0);
+  }
+}
+
+.uiverse-auth-card {
+  position: relative;
+  width: min(100%, 440px);
+  border-radius: 28px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.65), rgba(56, 189, 248, 0.45), rgba(251, 191, 36, 0.4));
+  box-shadow:
+    0 30px 80px rgba(15, 23, 42, 0.12),
+    0 8px 24px rgba(16, 185, 129, 0.12);
+  animation: saas-card-in 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.uiverse-auth-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from 180deg at 50% 50%, #34d399, #38bdf8, #fbbf24, #34d399);
+  z-index: -1;
+  filter: blur(18px);
+  opacity: 0.35;
+  animation: saas-glow 6s ease-in-out infinite;
+}
+
+.uiverse-auth-inner {
+  border-radius: 27px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  padding: 2rem 1.75rem 1.75rem;
+}
+
+@keyframes saas-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes saas-glow {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.02);
+  }
+}
+
+.uiverse-cta {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.uiverse-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.35) 45%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+  z-index: 0;
+}
+
+.uiverse-cta:hover::after {
+  transform: translateX(120%);
+}
+
+.uiverse-cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+.saas-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(2px);
+  opacity: 0.55;
+  animation: saas-float 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes saas-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}

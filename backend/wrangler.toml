@@ -1,0 +1,28 @@
+name = "order-management-api"
+main = "src/index.ts"
+compatibility_date = "2025-03-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "order-management"
+database_id = "00000000-0000-0000-0000-000000000001"
+migrations_dir = "migrations"
+
+[vars]
+STEADFAST_BASE_URL = "https://portal.packzy.com/api/v1"
+OPENROUTER_MODEL = "openai/gpt-4o-mini"
+CORS_ORIGIN = "http://localhost:3000,http://127.0.0.1:3000"
+# Local-only — remove or set ENVIRONMENT=production on deploy
+ALLOW_SIMULATE_WEBHOOK = "true"
+ALLOW_INSECURE_WEBHOOK = "true"
+# Production secrets:
+# wrangler secret put AUTH_SECRET
+# wrangler secret put STEADFAST_WEBHOOK_SECRET
+# wrangler secret put GEMINI_API_KEY
+# wrangler secret put OPENROUTER_API_KEY
+# wrangler secret put STEADFAST_API_KEY
+# wrangler secret put STEADFAST_SECRET_KEY
+
+[dev]
+port = 8787

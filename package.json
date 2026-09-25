@@ -1,0 +1,17 @@
+{
+  "name": "nexorder",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w frontend",
+    "dev:api": "npm run db:local -w backend && npm run dev -w backend",
+    "dev:web": "npm run dev -w frontend",
+    "build": "npm run build -w frontend",
+    "deploy:api": "npm run deploy -w backend",
+    "db:local": "npm run db:local -w backend"
+  }
+}

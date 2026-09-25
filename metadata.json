@@ -1,0 +1,6 @@
+{
+  "name": "NexOrder",
+  "description": "NexOrder — order management with AI parsing, courier integration, customers, and inventory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

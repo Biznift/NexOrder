@@ -1,0 +1,21 @@
+{
+  "name": "nexorder-api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "deploy": "wrangler deploy",
+    "db:local": "wrangler d1 migrations apply order-management --local",
+    "db:remote": "wrangler d1 migrations apply order-management --remote",
+    "types": "wrangler types"
+  },
+  "dependencies": {
+    "hono": "^4.7.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250317.0",
+    "typescript": "^5.8.2",
+    "wrangler": "^4.0.0"
+  }
+}
